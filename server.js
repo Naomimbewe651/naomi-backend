@@ -40,7 +40,7 @@ const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
     user: process.env.GMAIL_USER,
-    pass: process.env.GMAIL_APP_PASSWORD,   // 16-char App Password
+    pass: process.env.seobyfhoefqobuib,   // 16-char App Password
   },
 });
 
@@ -236,7 +236,7 @@ app.get('/api/health', async (req, res) => {
 app.use((req, res) => res.status(404).json({ error: 'Not found' }));
 
 // ─── Start ────────────────────────────────────────────────────
-app.listen(PORT, () => {
+app.listen(PORT, "0.0.0.0", () => {
   console.log(`\n🚀  Server running at http://localhost:${PORT}`);
   console.log(`📋  Health check → http://localhost:${PORT}/api/health`);
   console.log(`📬  Contact endpoint → POST http://localhost:${PORT}/api/contact\n`);
